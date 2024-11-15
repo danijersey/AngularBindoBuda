@@ -1,0 +1,167 @@
+<p>lobby works!</p>
+
+<br>
+
+<h1>Pelota 
+    {{ currentBall }}
+</h1>
+<!-- <label> {{username}} </label> -->
+
+<!-- <button (click)="GenerateTable()"  [disabled]="disabletabla" > Generar Tabla </button> -->
+<h2>  BINGO GRAN BUDA</h2>
+@if (mensaje) {
+<p>{{ mensaje }}</p>
+}
+<table>
+
+    <!-- {{l}} -->
+    @for (item of largotabla; track $index) {
+    @if (!numerosSeleccionados.includes(obtenerTabla[0][0][$index])  ) { 
+        
+        @if (currentBall !== obtenerTabla[0][0][$index]) {
+
+            <button [value]="obtenerTabla[0][0][$index]" (click)="mostrarnumero(obtenerTabla[0][0][$index])"
+            [ngStyle]="{'background-color': isButtonClicked ? 'green' : 'blue'}"  disabled="true">
+            {{obtenerTabla[0][0][$index]}}
+            </button>
+
+        }
+        @if (currentBall == obtenerTabla[0][0][$index]  ) { 
+            <button [value]="obtenerTabla[0][0][$index]" (click)="mostrarnumero(obtenerTabla[0][0][$index])" >
+            {{obtenerTabla[0][0][$index]}}
+            </button>
+        }
+    }
+    @if (numerosSeleccionados.includes(obtenerTabla[0][0][$index])  ) { 
+        <button 
+        >
+       x
+       </button>
+     }
+
+    }
+    <br>
+    @for (item of largotabla; track $index) {
+        @if (!numerosSeleccionados.includes(obtenerTabla[0][1][$index])  ) { 
+            @if ( currentBall !== obtenerTabla[0][1][$index]) {
+                <button [value]="obtenerTabla[0][1][$index]" (click)="mostrarnumero(obtenerTabla[0][1][$index])"
+                [ngStyle]="{'background-color': isButtonClicked ? 'green' : 'blue'}" disabled="true">
+                {{obtenerTabla[0][1][$index]}}
+                </button>
+            }
+            @if ( currentBall == obtenerTabla[0][1][$index]) {
+                <button [value]="obtenerTabla[0][1][$index]" (click)="mostrarnumero(obtenerTabla[0][1][$index])">
+                {{obtenerTabla[0][1][$index]}}
+                </button>
+            }
+        }
+        @if (numerosSeleccionados.includes(obtenerTabla[0][1][$index])  ) { 
+            <button 
+            >
+           x
+           </button>
+         }
+    }
+    <br>
+    @for (item of largotabla; track $index) {
+        @if (!numerosSeleccionados.includes(obtenerTabla[0][2][$index])  ) {
+            @if ( currentBall !== obtenerTabla[0][2][$index]) {
+
+                @if (obtenerTabla[0][2][$index]) {
+
+                    <button [value]="obtenerTabla[0][2][$index]" (click)="mostrarnumero(obtenerTabla[0][2][$index])" 
+                    [ngStyle]="{'background-color': isButtonClicked ? 'green' : 'blue'}"disabled="true">
+                    {{obtenerTabla[0][2][$index]}}
+                    </button>
+
+                }
+                @if (obtenerTabla[0][2][$index]===null) {
+                    <button class="botonEstrella">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -960 960 960" width="20%" height="20%" fill="#5f6368">
+                          <path d="m323-245 157-94 157 95-42-178 138-120-182-16-71-168-71 167-182 16 138 120-42 178Zm-90 125 65-281L80-590l288-25 112-265 112 265 288 25-218 189 65 281-247-149-247 149Zm247-355Z"/>
+                        </svg>
+                      </button>
+                      
+                      
+                }
+            }
+            @if ( currentBall == obtenerTabla[0][2][$index]) {
+
+                @if (obtenerTabla[0][2][$index]) {
+                    <button [value]="obtenerTabla[0][2][$index]" (click)="mostrarnumero(obtenerTabla[0][2][$index])">
+                    {{obtenerTabla[0][2][$index]}}
+                    </button>
+                }
+                @if (obtenerTabla[0][2][$index]===null) {
+                <button>00</button>
+                }
+            }
+        }
+        @if (numerosSeleccionados.includes(obtenerTabla[0][2][$index])  ) { 
+            <button 
+            >
+            x
+            </button>
+        }
+
+    }<br>
+    @for (item of largotabla; track $index) {
+        @if (!numerosSeleccionados.includes(obtenerTabla[0][3][$index])  ) { 
+            @if ( currentBall !== obtenerTabla[0][3][$index]) {
+                <button [value]="obtenerTabla[0][3][$index]" (click)="mostrarnumero(obtenerTabla[0][3][$index])"
+                disabled="true"  [ngStyle]="{'background-color': isButtonClicked ? 'green' : 'blue'}"   >
+                {{obtenerTabla[0][3][$index]}}
+                </button>
+            }
+            @if ( currentBall == obtenerTabla[0][3][$index]) {
+                <button [value]="obtenerTabla[0][3][$index]" (click)="mostrarnumero(obtenerTabla[0][3][$index])">
+            {{obtenerTabla[0][3][$index]}}
+            </button>
+            }
+        }
+        @if (numerosSeleccionados.includes(obtenerTabla[0][3][$index])  ) { 
+            <button 
+            >
+           x
+           </button>
+        }
+
+    }
+    <br>
+    @for (item of largotabla; track $index) {
+        @if (!numerosSeleccionados.includes(obtenerTabla[0][4][$index])  ) {
+            @if ( currentBall !== obtenerTabla[0][4][$index]) {
+                <button [value]="obtenerTabla[0][4][$index]" (click)="mostrarnumero(obtenerTabla[0][4][$index])"
+                disabled="true" [ngStyle]="{'background-color': isButtonClicked ? 'green' : 'blue'}" >
+                {{obtenerTabla[0][4][$index]}}
+                </button>
+            }
+            @if ( currentBall == obtenerTabla[0][4][$index]) {
+                <button [value]="obtenerTabla[0][4][$index]" (click)="mostrarnumero(obtenerTabla[0][4][$index])">
+                {{obtenerTabla[0][4][$index]}}
+                </button>
+            }
+        }
+        @if (numerosSeleccionados.includes(obtenerTabla[0][4][$index])  ) { 
+            <button 
+            >
+           x
+           </button>
+         }
+    }
+
+</table>
+<button (click)="Bingo()"> Bingo</button>
+
+
+<!-- src/app/components/bingo/bingo.component.html -->
+<!-- src/app/components/bingo/bingo.component.html -->
+<div>
+    <h1>Bingo</h1>
+    <h2>Última bola extraída:</h2>
+    <div *ngIf="currentBall !== null" class="ball-display">
+      {{ currentBall }}
+    </div>
+  </div>
+  
+  

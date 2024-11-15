@@ -1,0 +1,17 @@
+<p>WELCOME TO THE MENU mr.{{username}}  </p>
+
+<button (click)="StartGame()">
+    Iniciar a jugar 
+</button>
+
+<br>
+<label>Lista De Ganadores</label>
+
+
+
+@for (item of usuariosGanadores; track $index) {
+    <br>
+   {{ usuariosGanadores[$index].username }}
+}
+<!-- Añadir este bloque dentro del HTML -->
+
